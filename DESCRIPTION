@@ -2,7 +2,11 @@ Package: Retsly
 Title: R Interface to Retsly Real Estate Data API
 Version: 0.0.1.9000
 Authors@R: person("Alex", "Shum", email = "Alex@ALShum.com", role = c("aut", "cre"))
-Description: Includes functions to pull data from Retsly's MLS listings, public data (real estate transactions, assessments and parcels) as well as data on real estate agents/offices associated with MLS listings.
-Depends: R (>= 3.2.2)
-License: What license is it under?
+Description: Includes functions to pull data from Retsly's MLS listings, public
+    data (real estate transactions, assessments and parcels) as well as data on real
+    estate agents/offices associated with MLS listings.
+Depends:
+    R (>= 3.2.2)
+License: MIT + file LICENSE
 LazyData: true
+RoxygenNote: 5.0.1
