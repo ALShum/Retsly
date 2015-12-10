@@ -2,11 +2,19 @@
 % Please edit documentation in R/assessments.R
 \name{assessments}
 \alias{assessments}
-\title{Public assessment data}
+\title{Retrieves the set of public assessments from one of Retsly's datasets.}
 \usage{
 assessments(opts = retsly_query(), dataset = "pub")
 }
+\arguments{
+\item{opts}{Request query parameters, see \code{retsly_query}.}
+
+\item{dataset}{Vendor to get the listings from.  See \code{list_datasets} for a list of vendors.}
+}
+\value{
+data.frame with id, fips, location, taxID, assessed value and other information.
+}
 \description{
-Public assessment data
+Retrieves the set of public assessments from one of Retsly's datasets.
 }
 

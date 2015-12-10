@@ -8,7 +8,11 @@ url_assessments = function(dataset = "pub") {
   url = retsly_url(dataset, "assessments")
 }
 
-#' Public assessment data
+#' Retrieves the set of public assessments from one of Retsly's datasets.
+#'
+#' @param opts Request query parameters, see \code{retsly_query}.
+#' @param dataset Vendor to get the listings from.  See \code{list_datasets} for a list of vendors.
+#' @return data.frame with id, fips, location, taxID, assessed value and other information.
 #'
 #' @export
 assessments = function(opts = retsly_query(), dataset = "pub") {
