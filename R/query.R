@@ -85,8 +85,7 @@ query_request = function(opts = retsly_query(), url) {
 #' 
 #' @export
 retsly_query = function(
-  #access_token = "6baca547742c6f96a6ff71b138424f21",
-  access_token = "790d218426a115416a7f69371094d28e",
+  access_token = "",
   vendor = NULL,
   offset = NULL,
   limit = 100,

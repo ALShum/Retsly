@@ -1,5 +1,8 @@
 # Retsly
 
-Retsly is an R interface to the Retsly API.  This code is an extension of code I wrote during the zipcode2015 hackathon.
+R bindings to get data from the Retsly API.  More information about the Retsly API here: https://rets.ly/docs/platform.html
 
-More details coming soon.
+## Installation
+Install with `devtools`.  If you don't have devtools, install it using `install.packages("devtools")`.  After you have devtools installed you can install the Retsly package using: `devtools::install_github("ALShum/Retsly")`.
+
+## Basic functionality

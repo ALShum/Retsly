@@ -8,5 +8,8 @@ Description: Includes functions to pull data from Retsly's MLS listings, public
 Depends:
     R (>= 3.2.2)
 License: MIT + file LICENSE
+Imports:
+    httr,
+    
 LazyData: true
 RoxygenNote: 5.0.1
