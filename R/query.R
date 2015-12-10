@@ -85,7 +85,7 @@ query_request = function(opts = retsly_query(), url) {
 #' 
 #' @export
 retsly_query = function(
-  access_token = "",
+  access_token = Sys.getenv("retsly_api_token"),
   vendor = NULL,
   offset = NULL,
   limit = 100,
