@@ -191,7 +191,7 @@ Here is how to find the first 50 listings from the `test` dataset with bathrooms
 ```
 opts = retsly_query(
     limit = 50,
-    bathroom = c("!=", 3)
+    baths = c("!=", 3)
 )
 
 listings(opts, dataset = "test")
