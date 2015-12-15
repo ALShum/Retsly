@@ -124,7 +124,11 @@ offices_listings(dataset = "test_sd", office_id = "PUT OFFICE ID HERE")
 ```
 
 #### Media
+To get a list of media from the `test` dataset:
 
+```
+media(dataset = "test")
+```
 
 #### Vendors
 To get a list of approved vendors (MLS vendors and other datasets which you have access to):
@@ -139,11 +143,57 @@ By default, when you make a request to the Retsly API it will return the first 1
 #### Query parameters
 Query parameters can be set using `retsly_query`.  The following query parameters can be specified:
 
-* offset: 
-* limit: 
-* sortBy: 
-* order: 
-* near: 
-* radius: 
+* offset: Skips the first `n` listings.  For example an offset of 100 means to skip the first 100 listings.
+* limit: Limits the size of the result set (maximum is 100 listings).
+* sortBy: Which column to sort query by.
+* order: Order responses by "asc" or "desc".
+* near: Find listings near a specific location.  Either coordinates like "73.98,40.73" or a place name like "San Diego".
+* radius: Search radius in miles, km or degrees.
+
+Here is an example of specifying some query parameters:
+
+```
+opts = retsly_query(
+    offset = 100,
+    limit = 100,
+    order = "asc"
+)
+```
+
+Any or all of the above query parameters can be specified this way.
 
 #### Custom queries
+
+The Retsly API also includes a much more advanced way to filter results from the various datasets using "custom queries".  You can filter listings by things like number of bedrooms, number of bathrooms, the square footage and many other possible variables. 
+
+A full of the custom queries can be seen on the Retsly API explorer: https://rets.ly/docs/retsly/index.html#listings
+
+The custom queries do not need to be a strict equality constraint; custom queries can be specified by the following constraints:
+
+* "greater than": `>`
+* "less than": `<`
+* "greater than or equal to": `>=`
+* "less than or equal to": `<=`
+* "not equal to" types of constraints: `!=`
+
+For example, here is how to find listings from the `test` dataset with "greater than or equal to" 2 bedrooms:
+
+```
+opts = retsly_query(
+    bedrooms = c(">=", 2)
+)
+
+listings(opts, dataset = "test")
+```
+
+Here is how to find listings from the `test` dataset with bedrooms not equal to 3:
+
+```
+opts = retsly_query(
+    bedrooms = c("!=", 3)
+)
+
+listings(opts, dataset = "test")
+```
+
+
