@@ -186,11 +186,12 @@ opts = retsly_query(
 listings(opts, dataset = "test")
 ```
 
-Here is how to find listings from the `test` dataset with bedrooms not equal to 3:
+Here is how to find the first 50 listings from the `test` dataset with bathrooms not equal to 3:
 
 ```
 opts = retsly_query(
-    bedrooms = c("!=", 3)
+    limit = 50,
+    bathroom = c("!=", 3)
 )
 
 listings(opts, dataset = "test")
